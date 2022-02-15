@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="formGrp">
+  <lion-input formControlName="text" [validators]="[required]" [label]="'input'"></lion-input>
+
+  <lion-input-datepicker [label]="'datepicker'"></lion-input-datepicker>
+</form>
+
+<ng-container [ngSwitch]="formGrp.valid">
+  <div *ngSwitchCase="true">
+    <p>Form is valid</p>
+  </div>
+  <div *ngSwitchDefault>
+    <p>Form is invalid!!!!!!!</p>
+  </div>
+</ng-container>
